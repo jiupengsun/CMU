@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="js/tether.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-3.1.0.min.js"></script>
+<!--     <script type="text/javascript" charset="utf-8" src="js/jquery-3.1.1.min.js"></script> -->
+    <script type="text/javascript" charset="utf-8" src="js/vue.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lodash@4.16.0.js"></script>
+<!--     <script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div id="container_header">
+    <img id="header_avatar" src="user-avatars/default_avatar.png"/>
+    <p id="header_username"></p>
+</div>
+
+<div id="notification_holder" class="btn-group">
+    <button id="notification_text" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-bell"></span>
+    Notifications<span id = "notification_count" class="badge"></span></button>
+    <ul id="notification_menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <!-- <li role="separator" class="divider"></li>
+        <li><a href="#">Ignore all</a></li> -->
+        <!-- <li id="notification-invite-msg-template" class="notification-invite-msg">
+            <a id="other-user" class="hide">rlu</a>
+            <p class="notification-msg-text">xxx invites you to edit xxxxxxxxx document.<p>
+            <p class="notification-msg-time">2016 0708 000000000000</p>
+            <button class="btn-notification-accept">Accept</button>
+            <button class="btn-notification-decline">Decline</button>
+        </li>
+
+        <li id="notification-reply-msg-template" class="notification-reply-msg">
+            <p class="notification-msg-text">xxx has accepted your invitations to edit xxxxxxxxx document<p>
+            <p class="notification-msg-time">2016 0708 000000000000</p>
+            <button class="btn-notification-read">Got it</button>
+        </li> -->
+    </ul>
+    <div id="header_logout" class="btn btn-logout">
+        <p>
+            Logout
+        </p>
+    </div>
+</div>
+
+
+<div>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a id="owned-holder" class="holder" data-toggle="tab" href="#owned-documents">
+            <span id="owned_icon" class="tab-icon glyphicon glyphicon-user"></span>
+            <p id="owned_text" class="tab-text">Owned by you</p>
+        </a>
+      </li>
+      <li>
+        <a id="shared-holder" class="holder" data-toggle="tab" href="#shared-documents">
+            <span id="shared_icon" class="tab-icon glyphicon glyphicon-briefcase"></span>
+            <p id="shared_text" class="tab-text">Shared with you</p>
+        </a>
+      </li>
+    </ul>
+</div>
+
+<!-- <div class="content-container"> -->
+<div id="documents-list-container" class="tab-content documents-container">
+  <div id="owned-documents" class="tab-pane fade in active">
+    <ol id="owned-documents-list" class="documents-list">
+    </ol>
+  </div>
+  <div id="shared-documents" class="tab-pane fade">
+    <ol id="shared-documents-list" class="documents-list">
+    </ol>
+  </div>
+<!-- </div> -->
+</div>
+
+<!--BEGIN: original list documents area-->
+<!-- <div class="documents-container well">
+    <div class="left-container">
+        <div id="shared-holder" class="holder">
+            <span id="shared_icon" class="container-icon glyphicon glyphicon-briefcase"></span>
+            <p id="shared_text" class="container-text">Shared with you</p>
+        </div>
+        <ol id="shared-documents-list" class="documents-list">
+        </ol>
+    </div>
+
+    <div class="right-container">
+        <div id="owned-holder" class="holder">
+            <span id="owned_icon" class="container-icon glyphicon glyphicon-user"></span>
+            <p id="owned_text" class="container-text">Owned by you</p>
+        </div>
+        <ol id="owned-documents-list" class="documents-list">
+        </ol>
+    </div>
+</div> -->
+<!--END: original list documents area-->
+
+<div class="btn-new-doc">
+    <a data-toggle="modal" data-target="#new-doc-Modal"><span class="glyphicon glyphicon-plus icon-new-btn"></span></a>
+</div>
+
+<!-- Modal NEW document-->
+<div class="modal fade" id="new-doc-Modal" tabindex="-1" role="dialog" aria-labelledby="new-doc-ModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="new-doc-ModalLabel">Create a new document</h4>
+            </div>
+            <div class="modal-body">
+                <form id="new-doc-form">
+                    <div class="form-group">
+                        <label for="doc-title-input">Document Title:</label>
+                        <input type="text" class="form-control" id="doc-title-input" placeholder="New document">
+                    </div>
+                    <div class="form-group">
+                        <label for="shared-users-input">Shared with:</label>
+                        <input type="text" class="form-control" id="shared-users-input"
+                               placeholder="Please specify the username NOT nickname e.g. user1, user2,...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-form-new-doc" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<!-- Templates -->
+
+<li id="shared_list_item_template" class="hide">
+    <a href="" class="doc-name">Default title</a>
+    <!--<span class="doc-time-icon glyphicon glyphicon-time"></span>
+    <p class="doc-time"></p>-->
+    <div class="doc-action">
+        <!-- <img id="owner_icon" src="img/icon-notification.png"> -->
+        <a id="btn-shared-delete" class="btn-delete"><span id="shared_del-icon"
+                                                           class="doc-icon glyphicon glyphicon-remove"></span></a>
+    </div>
+</li>
+<li id="owned_list_item_template" class="hide">
+    <a href="" class="doc-name">Default title</a>
+    <!--<span class="doc-time-icon glyphicon glyphicon-time"></span>
+    <p class="doc-time"></p>-->
+    <div class="doc-action">
+        <a id="btn-owned-edit" class="btn-edit" data-toggle="modal" data-target="#edit-doc-Modal"><span
+                id="owned-edit-icon" class="doc-icon glyphicon glyphicon-edit"></span></a>
+        <a id="btn-owned-delete" class="btn-delete"><span id="owned-del-icon"
+                                                          class="doc-icon glyphicon glyphicon-remove"></span></a>
+    </div>
+</li>
+
+<li id="notification-invite-msg-template" class="hide">
+    <a id="other-user" class="hide"></a>
+    <p class="notification-msg-text"><p>
+    <p class="notification-msg-time"></p>
+    <button class="btn-notification-accept">Accept</button>
+    <button class="btn-notification-decline">Decline</button>
+</li>
+
+<li id="notification-reply-msg-template" class="hide">
+    <p class="notification-msg-text"><p>
+    <p class="notification-msg-time"></p>
+    <button class="btn-notification-read">Got it</button>
+</li>
+
+<!-- Modal Edit document-->
+<div class="modal fade" id="edit-doc-Modal" tabindex="-1" role="dialog" aria-labelledby="edit-doc-ModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="edit-doc-ModalLabel">Update document</h4>
+            </div>
+            <div class="modal-body">
+                <form id="edit-doc-form">
+                    <div class="form-group">
+                        <label for="doc-title-edit-input">Edit document Title:</label>
+                        <input type="text" class="form-control" id="doc-title-edit-input"
+                               placeholder="Edit document title">
+                    </div>
+                    <div class="form-group">
+                        <label for="shared-users-edit-input">Shared with:</label>
+                        <input type="text" class="form-control" id="shared-users-edit-input"
+                               placeholder="Please specify the username NOT nickname e.g. user1, user2,...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-form-edit-doc" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="UTF-8" src="js/reconnecting-websocket.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/profile.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/header.js"></script>
+</html>

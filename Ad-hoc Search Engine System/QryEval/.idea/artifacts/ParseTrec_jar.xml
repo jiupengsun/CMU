@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ParseTrec:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ParseTrec_jar</output-path>
+    <root id="archive" name="QryEval.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../../3/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="QryEval" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/nekohtml-1.9.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/xercesImpl-2.9.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-core-4.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-demo-4.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-codecs-4.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-compress-1.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-benchmark-4.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-queryparser-4.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/lucene-analyzers-common-4.3.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

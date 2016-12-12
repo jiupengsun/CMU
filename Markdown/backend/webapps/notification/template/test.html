@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is a Notification test</title>
+</head>
+<body>
+
+<h1>Hello World </h1>
+<form id="notiForm">
+    <input type="text" maxlength="50" id="receiver_name">
+    <input type="submit" value="send">
+</form>
+<div id="message">
+
+</div>
+</body>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/reconnecting-websocket.min.js' %}"></script>
+<script type="text/javascript">
+
+    $(function(){
+        var docid = 0;
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        var chat_socket = new ReconnectingWebSocket(ws_scheme + "://" + window.location.host + "/backend/100");
+        //var chat_socket = new ReconnectingWebSocket(ws_scheme + "://" + window.location.host + "/" + docid);
+
+        chat_socket.onmessage = function(message) {
+            message = JSON.parse(message.data);
+            console.log(message);
+        };
+
+        $("#notiForm").on("submit", function(event) {
+            event.preventDefault();
+            var message = {
+                content_type: "0",
+                docid: docid,
+                other_uid: $("#receiver_name").val()
+            };
+
+            chat_socket.send(JSON.stringify(message));
+            return false;
+        })
+    });
+</script>
+</html>

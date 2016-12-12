@@ -1,0 +1,380 @@
+body{
+  height: 100%;
+}
+
+span:hover {
+    color: #88aae2;
+    cursor: pointer;
+}
+
+button:hover {
+  background-color:#bdbdc1;
+  cursor: pointer;
+}
+
+/*.nav-tabs > .active .holder{
+  background: #eaf0f9;
+}*/
+.content-container{
+  /*position: absolute;*/
+  width: 100%;
+  margin: 0px;
+  /*background: rgba(34, 34, 34, 0.3);*/
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-image: url("../img/cover-3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 2%;
+  padding-bottom: 10%;
+}
+.documents-container{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background-color: #eaf0f9;
+}
+
+.dropdown-container{
+}
+
+.left-container{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #e3e5e8;
+  float: left;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-size: cover;
+  /*text-align: center;*/
+}
+
+.right-container{
+  width: 50%;
+  height: 100%;
+  float: right;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #f7f8f9;
+  background-size: cover;
+}
+
+.holder{
+  position: relative;
+  float: left;
+  height: 50px;
+  overflow: hidden;
+}
+
+.container-icon{
+  float: left;
+  font-size: 2em; 
+  /*width: 25px;
+  height: 28px;*/
+  color: gray;
+}
+
+.container-text{
+  float: left;
+  margin-left: 10px;
+  font-size: 1.3em;
+  color: #525456;
+}
+
+.tab-text{
+  float: left;
+  margin-left: 10px;
+  font-size: 1.2em;
+  color: #525456;
+}
+
+.tab-icon{
+  float: left;
+  font-size: 1.5em; 
+  color: gray;
+}
+
+.documents-list{
+  list-style: none;
+  margin-top: 60px;
+}
+
+.list-doc{
+  border-width: 1px;
+  border-style: outset;
+  border-radius: 7px;
+  border-color: #525456;
+  background-color: white;
+  width: 60%;
+  height: 80px;
+  margin-bottom: 15px;
+  margin-left: 20%;
+}
+
+.doc-name{
+  float: left;
+  display: inline-block;
+  position: relative;
+  margin-left: 17px;
+  margin-top: 25px;
+}
+
+.doc-action{
+  float: right;
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.doc-time-icon{
+  float: left;
+  display: inline-block;
+  position: absolute;
+  margin-left: -73px;
+  margin-top: 54px;
+  font-size: 12px;
+}
+
+.doc-time{
+  float: left;
+  display: inline-block;
+  position: absolute;
+  margin-left: -53px;
+  margin-top: 54px;
+  font-size: 11px;
+}
+
+.doc-icon{
+  font-size: 1.8em; 
+  color: gray;
+
+}
+
+.btn-edit{
+  clear:both;
+  margin-left: 3px;
+  border:none;
+  background: none;
+}
+
+.btn-delete{
+  clear:both;
+  margin-left: 5px;
+  border:none;
+  background: none;
+}
+
+.btn-new-doc{
+  position: fixed;
+  border-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  bottom: 50px;
+  right: 50px;
+  z-index: 100;
+  text-align: center;
+  background-color: #e3e5e8;
+}
+
+.icon-new-btn{
+  color: #44668B;
+  font-size: 2em;
+  margin-top: 14px;
+  margin-left: 2px;
+}
+
+.hide{
+  display:none;
+}
+
+#notification_text{
+  float: left;
+  margin-left: 10px;
+  font-size: 1em;
+}
+
+#notification_holder{
+  position: absolute;
+  top: 15px;
+  margin-left: 80%;
+  float: right;
+  height: 30px;
+  z-index: 1000;
+}
+
+#notification_count{
+  margin-left: 4px;
+}
+.btn-logout:hover{
+  background: #dedfe0;
+}
+
+.btn-logout{
+  margin-left: 10px;
+  border-radius: 6px;
+  height: 33px;
+  z-index: 1000;
+  border-radius: 5px !important;
+  background: white;
+}
+
+#notification_menu{
+  min-height: 50px;
+  min-width: 200px;
+}
+
+.notification-invite-msg{
+  border-bottom: dashed;
+  border-color: gray;
+  border-width: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.notification-reply-msg{
+  border-bottom: dashed;
+  border-color: gray;
+  border-width: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.notification-msg-text{
+
+}
+
+.notification-msg-time{
+  font-size: 11px;
+  color: gray;
+}
+
+.btn-notification-accept{
+  position: relative;
+  margin-left: 30%;
+  border-radius: 5px;
+  background-color: #547eab;
+  color: white;
+  border-color: transparent;
+}
+
+.btn-notification-decline{
+  position: relative;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #bbcbdd;
+  border-color: transparent;
+}
+
+.btn-notification-read{
+  position: relative;
+  margin-left: 68%;
+  width: 60px;
+  border-radius: 5px;
+  background-color: #547eab;
+  color: white;
+  border-color: transparent;
+}
+
+/*hear css*/
+
+#container_header {
+  background-color: #44668B;
+  height: 60px;
+  width: 100%;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+}
+#header_element_base {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#header_btn_back {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 20px;
+  height: 40px;
+  width: 44px;
+  padding: 10px;
+  float: left;
+}
+#header_avatar {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  float: left;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  margin-left: 20px;
+}
+#header_username {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  float: left;
+  margin-left: 20px;
+  color: #ffffff;
+}
+#header_connect_status {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  float: right;
+  margin-right: 50px;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #253F5B;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 0.8em;
+  text-align: center;
+}
+#header_notification_holder {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  float: right;
+  height: 30px;
+  overflow: hidden;
+}
+#header_notification_icon {
+  float: left;
+  width: 20px;
+  height: 22px;
+  margin-top: 2px;
+}
+#header_notification_text {
+  float: left;
+  margin-left: 10px;
+  font-size: 1em;
+  /*color: #ffffff;*/
+}
+
+
+
+
+

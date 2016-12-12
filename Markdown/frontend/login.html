@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="js/tether.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/vue.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lodash@4.16.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/bootstrap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/bootbox.min.js"></script>
+</head>
+
+<body>
+
+<div class="pos-f-t">
+    <div class="navbar navbar-light bg-faded">
+
+    </div>
+</div>
+
+<div class="content-container">
+    <div id="login-container">
+        <div id="login-header">
+            <div id="login-tab-login">
+                <p class="login-tab-text"> Login</p>
+            </div>
+            <div id="login-tab-signup">
+                <p class="login-tab-text"> Signup</p>
+            </div>
+        </div>
+        <form class="login-form" active action="../login/" method="post">
+            <div class="form-group">
+                <label for="UserName">User Name</label>
+                <input type="username" class="form-control login-form-username" name="username"
+                       placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control login-form-password" name="password"
+                       placeholder="Enter your password">
+            </div>
+            <button class="btn btn-primary login-form-confirm">Confirm</button>
+        </form>
+        <form class="signup-form" action="../signup/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="UserName">User Name</label>
+                <input type="username" class="form-control signup-form-username" name="username"
+                       placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="Nickname">Nickname</label>
+                <input type="nickname" class="form-control signup-form-nickname" name="nickname"
+                       placeholder="Enter your nickname">
+            </div>
+
+            <div class="form-group">
+                <label for="avatar">Choose Your Avatar (Optional)</label>
+                <input type="file" class="form-control-file signup-form-avatar" name="avatar"
+                       aria-describedby="fileHelp">
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control signup-form-email" name="email"
+                       placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control signup-form-password" name="password"
+                       placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <label for="Password">Confirm Your Password</label>
+                <input type="password" class="form-control signup-form-password-confirm" name="password_confirm"
+                       placeholder="Enter your password">
+            </div>
+            <button class="btn btn-primary signup-form-confirm">Confirm</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Edit document-->
+<div class="modal fade" id="edit-doc-Modal" tabindex="-1" role="dialog" aria-labelledby="edit-doc-ModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="edit-doc-ModalLabel">Create a new document</h4>
+            </div>
+            <div class="modal-body">
+                <form id="edit-doc-form">
+                    <div class="form-group">
+                        <label for="doc-title-edit-input">Edit document Title:</label>
+                        <input type="text" class="form-control" id="doc-title-edit-input"
+                               placeholder="Edit document title">
+                    </div>
+                    <div class="form-group">
+                        <label for="shared-users-edit-input">Shared with:</label>
+                        <input type="text" class="form-control" id="shared-users-edit-input"
+                               placeholder="e.g. user1, user2,...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-form-edit-doc" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" charset="UTF-8" src="js/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/login.js"></script>
+</html>

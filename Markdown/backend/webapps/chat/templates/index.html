@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is a Markdown test</title>
+</head>
+<body>
+
+<h1>Hello World </h1>
+<form id="chatForm">
+    <input type="text" maxlength="50" id="name">
+    <input type="text" maxlength="100" id="message">
+    <input type="submit" value="send">
+</form>
+<div id="message">
+
+</div>
+</body>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/reconnecting-websocket.min.js' %}"></script>
+<script type="text/javascript">
+
+    $(function(){
+        var docid = 0;
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        var chat_socket = new ReconnectingWebSocket(ws_scheme + "://" + window.location.host + "/notify/100");
+        //var chat_socket = new ReconnectingWebSocket(ws_scheme + "://" + window.location.host + "/" + docid);
+
+        chat_socket.onmessage = function(message) {
+            message = JSON.parse(message.data);
+            console.log(message);
+        };
+
+        $("#chatForm").on("submit", function(event) {
+            event.preventDefault();
+            var message = {
+                path: "/chat/100",
+                handle: $("#name").val(),
+                message: $("#message").val()
+            };
+
+            chat_socket.send(JSON.stringify(message));
+            return false;
+        })
+    });
+</script>
+</html>

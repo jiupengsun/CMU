@@ -1,0 +1,237 @@
+body {
+  background-color: #F5F5F5 !important;
+}
+.container {
+  width: 100vw;
+  height: calc(80vh);
+  overflow: hidden;
+}
+.left {
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  float: left;
+  overflow: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.right {
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  float: left;
+  overflow: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #273C53;
+  padding: 0px;
+}
+#editor {
+  width: calc(100%);
+  height: calc(100%);
+  background: #273C53;
+  padding: 20px;
+  color: #B8CBE7;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.preview {
+  width: calc(100%);
+  height: calc(100%);
+  background: #ffffff;
+}
+.debug {
+  width: calc(100%);
+  height: calc(100%);
+  background: #ffffff;
+  margin-top: 10px;
+  background: lightseagreen;
+}
+.debug p,
+.debug h1,
+.debug h2,
+.debug h3,
+.debug h4,
+.debug span:not(.hljs-keyword),
+.debug li,
+.debug ul {
+  color: #5D5D5D;
+  background-color: #ffffff;
+}
+.debug blockquote:not(.code) {
+  font-style: italic;
+  padding-left: 20px;
+}
+.debug .underline {
+  text-decoration: underline;
+}
+.debug .delete {
+  text-decoration: line-through;
+}
+.debug img {
+  width: 50%;
+}
+#chat_dialog {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 270px;
+  position: absolute;
+  overflow: hidden;
+  background-color: #44668B;
+  top: calc(40vh);
+  left: calc(80vw);
+}
+#chat_title {
+  width: 270px;
+  height: 30px;
+  text-align: center;
+}
+#chat_title_text {
+  margin-top: 10px;
+  color: #ffffff;
+}
+#chat_content_list {
+  background-color: #ffffff;
+  height: 300px;
+  list-style: none;
+  padding: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: 60px;
+  word-wrap: break-word;
+}
+#chat_action_bar {
+  width: 270px;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#chat_text_input {
+  float: left;
+  width: calc(200px);
+  height: 40px;
+  border-radius: 5px;
+}
+.chat_item_basic {
+  visibility: visible;
+  height: auto;
+  overflow: hidden;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.chat_item_avatar_basic {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  float: left;
+}
+.chat_item_content_basic {
+  float: left;
+  display: inline-block;
+  width: calc(180px);
+  font-size: 14px;
+}
+.chat_item_mine {
+  visibility: visible;
+  height: auto;
+  overflow: hidden;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: right;
+}
+.chat_item_other {
+  visibility: visible;
+  height: auto;
+  overflow: hidden;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+.chat_item_avatar_mine {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  float: left;
+  float: right;
+  display: inline-block;
+}
+.chat_item_avatar_other {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  float: left;
+}
+.chat_item_content_mine {
+  float: left;
+  display: inline-block;
+  width: calc(180px);
+  font-size: 14px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.chat_item_content_other {
+  display: inline-block;
+  width: calc(180px);
+  font-size: 14px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.chat_item_mine_template {
+  visibility: hidden;
+}
+.chat_item_other_template {
+  visibility: hidden;
+}
+#chat_button_send {
+  width: 50px;
+  float: left;
+  height: 40px;
+  margin-left: 5px;
+  border-radius: 5px;
+  background-color: #44668B;
+  font-size: 16px;
+}
+.preview p,
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview span:not(.hljs-keyword),
+.preview li,
+.preview ul {
+  color: #5D5D5D;
+  background-color: #ffffff;
+}
+.preview blockquote:not(.code) {
+  font-style: italic;
+  padding-left: 20px;
+}
+.preview .underline {
+  text-decoration: underline;
+}
+.preview .delete {
+  text-decoration: line-through;
+}
+.preview img {
+  width: 50%;
+}

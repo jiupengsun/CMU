@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCT_Edit</title>
+    <link href="css/edit.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/default.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="js/tether.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/bootstrap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/bootbox.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<div id="container_header">
+    <a href="/profile.html"><img id="header_btn_back" src="img/back_btn.png"/></a>
+    <a href="/profile.html"><img id="header_avatar" src="img/profile-2.jpg"/></a>
+    <p id="header_username"></p>
+    <div id="header_logout">
+        <p>
+            Logout
+        </p>
+    </div>
+    <p id="header_connect_status">Disconnect</p>
+</div>
+<div class="container">
+    <div class="left">
+        <h4 id="preview_title">Title</h4>
+        <div class="preview" v-html="renderedText">
+        </div>
+    </div>
+    <div class="right">
+        <textarea id="editor" :value="rawText" @input="update"></textarea>
+    </div>
+</div>
+<div id="chat_dialog">
+    <div id="chat_title">
+        <p id="chat_title_text">Chat Dialog (Draggable)</p>
+    </div>
+    <ul id="chat_content_list">
+    </ul>
+    <div id="chat_action_bar" class="input-group">
+        <input id="chat_text_input" type="text" class="form-control" aria-label="..."/>
+        <button id="chat_button_send" class="btn-primary">Send</button>
+    </div>
+</div>
+</body>
+<li class="chat_item_other_template">
+    <img class="chat_item_avatar_other chat_item_avatar" src="img/avatar.jpg"/>
+    <p class="chat_item_content_other chat_item_content"> content</p>
+</li>
+<li class="chat_item_mine_template">
+    <img class="chat_item_avatar_mine chat_item_avatar" src="img/profile-2.jpg"/>
+    <p class="chat_item_content_mine chat_item_content"> content</p>
+</li>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Hello world!
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="UTF-8" src="js/reconnecting-websocket.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/marker.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/chat.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/edit.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/header.js"></script>
+</html>

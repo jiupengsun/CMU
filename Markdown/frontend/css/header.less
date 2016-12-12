@@ -1,0 +1,99 @@
+@base_blue: #44668B;
+@dark_blue: #273C53;
+@white_bg: #ffffff;
+@bg: #F5F5F5;
+@header_height: 60px;
+@font_size_normal: 18px;
+@edit_text_color: #B8CBE7;
+@header_padding: 30px;
+@preview_text_color: #5D5D5D;
+
+#container_header {
+  background-color: @base_blue;
+  height: @header_height;
+  width: 100%;
+  position: relative;
+  padding-left: @header_padding;
+  padding-right: @header_padding;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#header_element_base {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#header_btn_back {
+  #header_element_base;
+  margin-left: 20px;
+  height: 40px;
+  width: 44px;
+  padding: 10px;
+  float: left;
+}
+
+#header_avatar {
+  #header_element_base;
+  float: left;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  margin-left: 20px;
+}
+
+#header_username {
+  #header_element_base;
+  float: left;
+  margin-left: 20px;
+  color: @white_bg;
+}
+
+#header_connect_status {
+  #header_element_base;
+  float: right;
+  margin-right: 50px;
+  color: @white_bg;
+  border-radius: 5px;
+  background-color: #253F5B;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+#header_notification_holder {
+  #header_element_base;
+  float: right;
+  height: 30px;
+  overflow: hidden;
+}
+
+#header_notification_icon {
+  float: left;
+  width: 20px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+#header_notification_text {
+  float: left;
+  margin-left: 10px;
+  font-size: 1em;
+  color: @white_bg;
+}
+
+#header_logout {
+  #header_element_base;
+  float: right;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  color: @white_bg;
+}
+
